@@ -12,3 +12,4 @@ export_dir: models/chatglm3_lora_sft
 export_size: 2
 export_device: cpu
 export_legacy_format: false
+# export_hub_model_id: "klaylouis1932/chatglm3-6b-lora-ft-fin"

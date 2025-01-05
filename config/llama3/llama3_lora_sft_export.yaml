@@ -12,3 +12,4 @@ export_dir: models/llama3_lora_sft
 export_size: 2
 export_device: cpu
 export_legacy_format: false
+# export_hub_model_id: "klaylouis1932/llama3-lora-ft-fin"
