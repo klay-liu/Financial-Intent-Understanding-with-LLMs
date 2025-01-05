@@ -1,0 +1,5 @@
+model_name_or_path: THUDM/chatglm3-6b
+adapter_name_or_path: saves/chatglm3-6b/lora/sft
+template: chatglm3
+infer_backend: huggingface  # choices: [huggingface, vllm]
+trust_remote_code: true

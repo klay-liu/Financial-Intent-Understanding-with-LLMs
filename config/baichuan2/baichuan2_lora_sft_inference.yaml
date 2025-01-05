@@ -1,0 +1,5 @@
+model_name_or_path: baichuan-inc/Baichuan2-7B-Chat
+adapter_name_or_path: saves/baichuan2-7b/lora/sft
+template: baichuan2
+infer_backend: huggingface  # choices: [huggingface, vllm]
+trust_remote_code: true

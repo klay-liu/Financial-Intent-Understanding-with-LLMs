@@ -1,0 +1,14 @@
+### Note: DO NOT use quantized model or quantization_bit when merging lora adapters
+
+### model
+model_name_or_path: baichuan-inc/Baichuan2-7B-Chat
+adapter_name_or_path: saves/baichuan2-7b/lora/sft
+template: baichuan2
+finetuning_type: lora
+trust_remote_code: true
+
+### export
+export_dir: models/baichuan2_7b_lora_sft
+export_size: 2
+export_device: cpu
+export_legacy_format: false
