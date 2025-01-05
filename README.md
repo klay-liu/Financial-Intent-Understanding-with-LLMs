@@ -163,7 +163,9 @@ E. 基金问询
 │   └── llama3/               # Llama3模型配置
 ├── data/                      # 数据集相关
 │   └── dataset_info.json     # 数据集配置
-├── evaluation/               # 评测结果
+├── evaluation/              # 评测结果
+│   └── notebooks/           # 评测notebook
+│   └── results/             # 评测结果
 ├── README.md                 # 项目说明文档
 ```
 
