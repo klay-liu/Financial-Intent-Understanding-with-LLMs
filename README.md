@@ -127,13 +127,28 @@ E. 基金问询
 | Baichuan2-7B-Chat | 70.67% | 88.00% | +17.33% |
 | Llama-3-8B-Instruct | 74.67% | 86.67% | +12.00% |
 | ChatGLM3-6B | 49.33% | 85.33% | +36.00% |
+| Qwen2.5-0.5B-Instruct | 41.33% | 84.00% | +42.67% |
 
 ### 关键发现
-- 所有模型经过LoRA微调后都取得显著提升
-- Qwen2.5-7B-Instruct基准性能最好,显示出优秀的零样本能力
-- ChatGLM3-6B提升最为显著(+36%)
-- 微调后各模型性能趋于接近,都达到85%以上的准确率
-- Claude-3.5 Sonnet在相同任务上获得94.67%的准确率(无微调)
+- Claude3-5-Sonnet表现最佳,达到94.67%的准确率(无需微调)
+- 所有模型经过微调后都取得显著提升
+-  Qwen2.5-7B-Instruct基准性能最好,显示出优秀的零样本能力
+-  Qwen2.5-0.5B-Instruct提升最为显著(+42.67%)
+- ChatGLM3-6B提升也很明显(+36.00%)
+- 微调后大部分模型性能趋于接近,都达到84%以上的准确率
+
+### 继续预训练策略
+- 对 Qwen2.5-0.5B-Instruct在该[研报/财报数据集](https://huggingface.co/datasets/klaylouis1932/Finance-Research-Doc-from-Tigerbot)上进行继续预训练后的模型([Finance-Research-QWen2.5-0.5B-Instruct](https://huggingface.co/klaylouis1932/Finance-Research-QWen2.5-0.5B-Instruct))后再微调,可以将准确率进一步提升至89.33%
+- 这表明**针对特定任务场景的继续预训练+微调策略,可以帮助小规模模型获得更好的性能**
+- [Finance-Research-QWen2.5-0.5B-Instruct](https://huggingface.co/klaylouis1932/Finance-Research-QWen2.5-0.5B-Instruct)的预训练基准分数仅为20%,但经过微调后可达到89.33%,说明预训练和微调的侧重点可能不同
+
+### 小型模型vs大型模型
+ChatGLM3-6B(6B参数)和Qwen2.5-0.5B-Instruct(0.5B参数)的对比显示，小型模型通过合适的训练策略可以达到与大型模型相当的性能：
+- 基准性能相近(49.33% vs 41.33%)
+- 微调后性能接近(85.33% vs 84.00%)
+- Qwen2.5-0.5B-Instruct经过继续预训练+微调后性能更优(89.33%)
+
+这说明在特定任务上，训练策略的选择比模型规模更重要，小型模型+针对性训练可能是资源受限场景的理想选择。
 
 ## 💻 硬件要求
 - AWS EC2 ml.g5.4xlarge实例
