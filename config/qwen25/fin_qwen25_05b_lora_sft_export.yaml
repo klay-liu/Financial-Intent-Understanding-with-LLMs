@@ -1,0 +1,15 @@
+### Note: DO NOT use quantized model or quantization_bit when merging lora adapters
+
+### model
+model_name_or_path: klaylouis1932/Finance-Research-QWen2.5-0.5B-Instruct
+adapter_name_or_path: saves/fin_qwen25_05b/lora/sft
+template: qwen
+finetuning_type: lora
+trust_remote_code: true
+
+### export
+export_dir: models/fin_qwen25_05b_lora_sft
+export_size: 2
+export_device: cpu
+export_legacy_format: false
+export_hub_model_id: "klaylouis1932/fin-research-qwen25-0.5b-lora-ft-fin"
